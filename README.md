@@ -1,15 +1,35 @@
-# Project name
+# 🗺️ Activity Map
 
-This is the Project Description.
+**A comprehensive event activity management and queue system for large-scale events**
+
+Activity Map is a real-time web application designed to streamline event activity management, visitor navigation, and queue coordination for conferences, exhibitions, and community events for Arduino Day Philippines. The platform provides an interactive floor map, dynamic activity listings, and intelligent queue management to enhance both organizer efficiency and attendee experience.
+
+[![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=Next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=TailwindCSS&logoColor=white)](https://tailwindcss.com/)
+
+---
+
+## 🎯 Overview
+
+Activity Map is designed for mapping out all activities in large-scale events such as **Arduino Day Philippines**. The platform provides a comprehensive website that displays:
+
+- **📍 Venue Floor Plans**: Interactive maps showing all floors and booth locations
+- **📋 Activity Information**: Detailed information about each activity including descriptions, activities, and what visitors can expect
+- **⏱️ Queue Management**: Real-time queue status, position tracking, and estimated wait times
+- **🎯 Activity Discovery**: Browse, search, and filter activities across different floors and categories
+
+Whether you're an event organizer managing multiple activity stations or an attendee looking to navigate the venue efficiently, Activity Map streamlines the entire experience from discovery to participation.
 
 ---
 
 ## 📌 Table of Contents
 
-- [Website Frontend Documentation](#website-frontend-documentation)
-  - [📌 Table of Contents](#-table-of-contents)
-  - [🛠 Tech Stack](#-tech-stack)
-  - [🚀 Getting Started](#-getting-started)
+- [🎯 Overview](#-overview)
+- [📚 System Documentation](#-system-documentation)
+- [🛠 Tech Stack](#-tech-stack)
+- [🚀 Getting Started](#-getting-started)
     - [Prerequisites](#prerequisites)
   - [📁 Project Structure](#-project-structure)
   - [Issue \& Project Workflow](#issue--project-workflow)
@@ -35,7 +55,18 @@ This is the Project Description.
 
 ---
 
-## 🛠 Tech Stack
+## � System Documentation
+> We maintain detailed documentation for the system architecture, logic flows, and database schema in the `docs/` folder.
+
+| Document | Description |
+| :--- | :--- |
+| **[🏗️ System Architecture](./docs/ARCHITECTURE.md)** | High-level system overview, component breakdown, and integration points. |
+| **[🔄 Application Flowchart](./docs/FLOWCHART.md)** | Detailed logic flow from authentication to queue management. |
+| **[💾 Database Schema (ERD)](./docs/ERD.md)** | Entity relationship diagrams and table definitions. |
+
+---
+
+## �🛠 Tech Stack
 
 ![Next.js](https://img.shields.io/badge/-Next.js-555555?style=for-the-badge&logo=Next.js)&nbsp;
 ![React](https://img.shields.io/badge/-React-555555?style=for-the-badge&logo=react)&nbsp;
@@ -65,7 +96,7 @@ cd <PATH TO PROJECT FOLDER>
 3. Clone the repository, add `.` on the end to extract files to current directory.
 
 ```bash
-git clone https://github.com/ArduinoDayPH2025/arduino-ph-2025.git .
+git clone https://github.com/ArduinoDayPH2025/activity-map.git .
 ```
 
 4. Install dependencies
