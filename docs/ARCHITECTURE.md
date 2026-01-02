@@ -1,20 +1,22 @@
-# System Architecture
+# 🏗️ System Architecture
 
-This project is built using a **Shared Database Architecture** where the Registration System and the Activity Map share a single Supabase instance.
+This project is a **Queue & Capacity Management System** built on a **Shared Database Architecture**. It operates in tandem with the Event Registration Website to manage crowd flow, itineraries, and activity access.
 
-## Key Components
+## 🧩 Key Principles
 
-1.  **Frontend:** Next.js 14 (App Router) hosted on AWS.
-2.  **Backend:** Next.js Server Actions & API Routes (Serverless).
-3.  **Database:** Supabase (PostgreSQL).
-4.  **Auth:** Custom "2FA" implementation (Email + QR) validating against the shared `User` table.
+1.  **Shared Identity:** We do not create new users. We strictly read user identities from the Registration Database.
+2.  **Queue Credentialing:** The QR Code scan is used solely to identify the user for queuing purposes and itinerary verification.
+3.  **Itinerary-Based Priority:**
+    * **Priority Users:** Visitors with a pre-booked itinerary for a specific section get immediate access.
+    * **Walk-in Users:** Visitors without an itinerary for the section must join a digital queue if capacity is full.
 
-## Detailed Documentation
+## ⚙️ Key Components
 
-- **[User & Queue Flow](./FLOWCHART.md)**: Visualizes how a user logs in, joins a queue, and interacts with activities.
-- **[Database Schema (ERD)](./ERD.md)**: Details the table relationships, including the cross-team link to the Registration User table.
+1.  **Frontend:** Next.js 14 (App Router) hosted on AWS Amplify.
+2.  **Database:** Supabase (PostgreSQL) - Shared instance with Registration App.
+3.  **Real-Time Engine:** Supabase Realtime / Webhooks to handle live queue updates and notifications.
 
-## Integration Points
+## 🔌 Integration & Data Flow
 
-- **Registration Team:** We read from their `User` table (Read-Only).
-- **Physical Booths:** We validate against static QR codes printed at each booth.
+-   **Registration System:** Provides the "Source of Truth" for User Profiles and generated QR Codes.
+-   **Gatekeeper Scanners:** Guards scan users at Entry/Exit points. This updates the `current_count` of a section, which automatically triggers queue movement.

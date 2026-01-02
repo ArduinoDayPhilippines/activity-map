@@ -1,8 +1,8 @@
 # 🗺️ Activity Map
 
-**A comprehensive event activity management and queue system for large-scale events**
+**A smart capacity management and virtual queuing system for Arduino Day Philippines 2025**
 
-Activity Map is a real-time web application designed to streamline event activity management, visitor navigation, and queue coordination for conferences, exhibitions, and community events for Arduino Day Philippines. The platform provides an interactive floor map, dynamic activity listings, and intelligent queue management to enhance both organizer efficiency and attendee experience.
+Activity Map is a real-time web application designed to optimize crowd flow and venue navigation. Unlike standard event maps, this system acts as a traffic control engine, intelligently managing booth capacity by distinguishing between pre-scheduled visitors and walk-in attendees.
 
 [![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=Next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
@@ -11,18 +11,18 @@ Activity Map is a real-time web application designed to streamline event activit
 
 ---
 
-## 🎯 Overview
+🎯 Overview
+Activity Map integrates directly with the event's registration system to provide a seamless experience for attendees and organizers. It solves the problem of overcrowding by implementing a Dual-Priority Queue System:
 
-Activity Map is designed for mapping out all activities in large-scale events such as **Arduino Day Philippines**. The platform provides a comprehensive website that displays:
+🚀 Priority Access: Users with a pre-booked itinerary for a specific time/section are granted immediate entry.
 
-- **📍 Venue Floor Plans**: Interactive maps showing all floors and booth locations
-- **📋 Activity Information**: Detailed information about each activity including descriptions, activities, and what visitors can expect
-- **⏱️ Queue Management**: Real-time queue status, position tracking, and estimated wait times
-- **🎯 Activity Discovery**: Browse, search, and filter activities across different floors and categories
+⏳ Virtual Walk-in Queue: Users without a booking can join a digital waitlist when a section reaches capacity, freeing them to roam the venue instead of standing in line.
 
-Whether you're an event organizer managing multiple activity stations or an attendee looking to navigate the venue efficiently, Activity Map streamlines the entire experience from discovery to participation.
+📊 Live Capacity Tracking: Real-time monitoring of section occupancy driven by physical entry/exit scans.
 
----
+🤝 Shared Identity: No new accounts required—attendees log in simply by scanning their existing Registration QR code.
+
+Whether you are an attendee checking your itinerary or a guard managing section entry, Activity Map ensures the right people get to the right place at the right time.
 
 ## 📌 Table of Contents
 
@@ -118,7 +118,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## 📁 Project Structure
 
 ```
-📦 Project Name
+📦 Activity Map
 ├── 📂 .next
 ├── 📂 node_modules
 ├── 📂 public               # Static assets

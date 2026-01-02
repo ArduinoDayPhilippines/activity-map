@@ -1,11 +1,11 @@
 # Entity Relationship Diagram (ERD)
 
-This document outlines the database schema for the Arduino Day PH 2025 Activity Map.
+This schema models a **Capacity-Limited Queuing System** with itinerary support.
 
 ## Quick Links
 
 - **[View Interactive Diagram on dbdiagram.io](https://dbdiagram.io/d/Activity-Map-ERD-6953781339fa3db27bca19fe)**
-- **[View Database Dashboard (Supabase)](https://supabase.com/dashboard/project/YOUR_PROJECT_ID)**
+- **[View Database Dashboard (Supabase)(WIP)](https://supabase.com/dashboard/project/YOUR_PROJECT_ID)**
 
 ---
 
@@ -23,48 +23,50 @@ For quick reference directly in GitHub/VS Code:
 
 ```mermaid
 erDiagram
-    %% SHARED TABLE (Team A)
-    Reg_User {
+    %% SHARED TABLE (From Registration)
+    USERS {
         UUID id PK "Shared ID"
-        String email
-        String name
-        String personal_qr_code "Credential"
+        String display_name
+        String personal_qr_code "Identity Token"
     }
 
-    %% ACTIVITY MAP TABLES (Team B)
-    Floor ||--|{ Activity : "contains"
-    Activity ||--o{ QueueLog : "has"
+    %% VENUE MANAGEMENT
+    SECTIONS {
+        UUID id PK
+        String section_name "e.g., 'Robotics Floor'"
+        Int max_participants "Hard limit"
+        Int current_count "Live census"
+    }
+
+    ACTIVITY {
+        UUID id PK
+        UUID section_id FK
+        String title
+        String description
+    }
+
+    %% QUEUE & ITINERARY LOGIC
+    ITINERARY {
+        UUID id PK
+        UUID user_id FK
+        UUID section_id FK
+        Int sort_order "Planned sequence"
+        Boolean is_visited
+    }
+
+    QUEUE {
+        UUID id PK
+        UUID user_id FK
+        UUID section_id FK
+        Int position_number
+        Enum status "WAITING, NOTIFIED, INSIDE, FINISHED, CANCELLED"
+        DateTime created_at
+    }
+
+    %% RELATIONSHIPS
+    SECTIONS ||--|{ ACTIVITY : "hosts"
+    SECTIONS ||--o{ ITINERARY : "is_destination"
+    SECTIONS ||--o{ QUEUE : "has_waitlist"
     
-    %% CROSS-TEAM RELATIONS
-    Reg_User ||--o{ QueueLog : "joins"
-    Reg_User ||--o{ Feedback : "writes"
-
-    Floor {
-        UUID id PK
-        String name
-        Int floor_number
-    }
-
-    Activity {
-        UUID id PK
-        UUID floor_id FK
-        String name
-        Int max_capacity
-        Boolean is_active
-    }
-
-    QueueLog {
-        UUID id PK
-        UUID user_id FK
-        UUID activity_id FK
-        Enum status "WAITING, INSIDE, COMPLETED"
-        DateTime joined_at
-    }
-
-    Feedback {
-        UUID id PK
-        UUID user_id FK
-        UUID queue_log_id FK
-        Int rating
-    }
-```
+    USERS ||--o{ ITINERARY : "plans"
+    USERS ||--o{ QUEUE : "waits_in"
