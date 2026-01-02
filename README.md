@@ -11,22 +11,21 @@ Activity Map is a real-time web application designed to optimize crowd flow and 
 
 ---
 
-🎯 Overview
+## 🎯 Overview
 Activity Map integrates directly with the event's registration system to provide a seamless experience for attendees and organizers. It solves the problem of overcrowding by implementing a Dual-Priority Queue System:
 
-🚀 Priority Access: Users with a pre-booked itinerary for a specific time/section are granted immediate entry.
+- 🚀 Priority Access: Users with a pre-booked itinerary for a specific time/section are granted immediate entry.
 
-⏳ Virtual Walk-in Queue: Users without a booking can join a digital waitlist when a section reaches capacity, freeing them to roam the venue instead of standing in line.
+- ⏳ Virtual Walk-in Queue: Users without a booking can join a digital waitlist when a section reaches capacity, freeing them to roam the venue instead of standing in line.
 
-📊 Live Capacity Tracking: Real-time monitoring of section occupancy driven by physical entry/exit scans.
+- 📊 Live Capacity Tracking: Real-time monitoring of section occupancy driven by physical entry/exit scans.
 
-🤝 Shared Identity: No new accounts required—attendees log in simply by scanning their existing Registration QR code.
+- 🤝 Shared Identity: No new accounts required—attendees log in simply by scanning their existing Registration QR code.
 
 Whether you are an attendee checking your itinerary or a guard managing section entry, Activity Map ensures the right people get to the right place at the right time.
 
 ## 📌 Table of Contents
 
-- [🎯 Overview](#-overview)
 - [📚 System Documentation](#-system-documentation)
 - [🛠 Tech Stack](#-tech-stack)
 - [🚀 Getting Started](#-getting-started)
