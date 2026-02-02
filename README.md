@@ -1,15 +1,34 @@
-# Project name
+# 🗺️ Activity Map
 
-This is the Project Description.
+**A smart capacity management and virtual queuing system for Arduino Day Philippines 2025**
+
+Activity Map is a real-time web application designed to optimize crowd flow and venue navigation. Unlike standard event maps, this system acts as a traffic control engine, intelligently managing booth capacity by distinguishing between pre-scheduled visitors and walk-in attendees.
+
+[![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=Next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=TailwindCSS&logoColor=white)](https://tailwindcss.com/)
 
 ---
 
+## 🎯 Overview
+Activity Map integrates directly with the event's registration system to provide a seamless experience for attendees and organizers. It solves the problem of overcrowding by implementing a Dual-Priority Queue System:
+
+- 🚀 Priority Access: Users with a pre-booked itinerary for a specific time/section are granted immediate entry.
+
+- ⏳ Virtual Walk-in Queue: Users without a booking can join a digital waitlist when a section reaches capacity, freeing them to roam the venue instead of standing in line.
+
+- 📊 Live Capacity Tracking: Real-time monitoring of section occupancy driven by physical entry/exit scans.
+
+- 🤝 Shared Identity: No new accounts required—attendees log in simply by scanning their existing Registration QR code.
+
+Whether you are an attendee checking your itinerary or a guard managing section entry, Activity Map ensures the right people get to the right place at the right time.
+
 ## 📌 Table of Contents
 
-- [Website Frontend Documentation](#website-frontend-documentation)
-  - [📌 Table of Contents](#-table-of-contents)
-  - [🛠 Tech Stack](#-tech-stack)
-  - [🚀 Getting Started](#-getting-started)
+- [📚 System Documentation](#-system-documentation)
+- [🛠 Tech Stack](#-tech-stack)
+- [🚀 Getting Started](#-getting-started)
     - [Prerequisites](#prerequisites)
   - [📁 Project Structure](#-project-structure)
   - [Issue \& Project Workflow](#issue--project-workflow)
@@ -35,7 +54,18 @@ This is the Project Description.
 
 ---
 
-## 🛠 Tech Stack
+## � System Documentation
+> We maintain detailed documentation for the system architecture, logic flows, and database schema in the `docs/` folder.
+
+| Document | Description |
+| :--- | :--- |
+| **[🏗️ System Architecture](./docs/ARCHITECTURE.md)** | High-level system overview, component breakdown, and integration points. |
+| **[🔄 Application Flowchart](./docs/FLOWCHART.md)** | Detailed logic flow from authentication to queue management. |
+| **[💾 Database Schema (ERD)](./docs/ERD.md)** | Entity relationship diagrams and table definitions. |
+
+---
+
+## �🛠 Tech Stack
 
 ![Next.js](https://img.shields.io/badge/-Next.js-555555?style=for-the-badge&logo=Next.js)&nbsp;
 ![React](https://img.shields.io/badge/-React-555555?style=for-the-badge&logo=react)&nbsp;
@@ -65,7 +95,7 @@ cd <PATH TO PROJECT FOLDER>
 3. Clone the repository, add `.` on the end to extract files to current directory.
 
 ```bash
-git clone https://github.com/ArduinoDayPH2025/arduino-ph-2025.git .
+git clone https://github.com/ArduinoDayPH2025/activity-map.git .
 ```
 
 4. Install dependencies
@@ -87,7 +117,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## 📁 Project Structure
 
 ```
-📦 Project Name
+📦 Activity Map
 ├── 📂 .next
 ├── 📂 node_modules
 ├── 📂 public               # Static assets
